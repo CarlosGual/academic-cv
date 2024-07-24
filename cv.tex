@@ -19,7 +19,7 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, letterpaper, draft]{academic-cv}
+\documentclass[12pt, letterpaper]{academic-cv}
 
 % Configure page margins with geometry
 \geometry{left=0.75in, top=0.75in, right=0.75in, bottom=0.75in, footskip=.5cm}
@@ -29,6 +29,7 @@
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\usepackage{datetime}
 
 
 %-------------------------------------------------------------------------------
@@ -36,7 +37,7 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 \name{Carlos Gutiérrez Álvarez}{}
-\position{PhD Student}
+\position{PhD Student in Artificial Intelligence \& Robotics}
 \address{Universidad de Alcalá, Campus Universitario, A2 Km 33.600
 28805, Alcalá de Henares, Spain}
 
@@ -63,7 +64,7 @@
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {September 2023}
+  {\monthname, \the\year}
   {Carlos Gutiérrez Álvarez ~~~·~~~ Curriculum Vitae}
   {\thepage}
 
@@ -73,15 +74,15 @@
 %	Each section is imported separately, open each file in turn to modify content
 %   Comment out any sections that are not appropriate for your CV
 %-------------------------------------------------------------------------------
-\input{cv/education.tex}
-\input{cv/professional.tex}
-\input{cv/publications.tex}
-\input{cv/honors.tex}
-\input{cv/presentation.tex}
-\input{cv/teaching.tex}
-%\input{cv/mentoring.tex}
-%\input{cv/research.tex}
-\input{cv/extracurricular.tex}
+\input{cv/education}
+\input{cv/professional}
+\input{cv/research}
+\input{cv/publications}
+\input{cv/presentation}
+\input{cv/teaching}
+\input{cv/mentoring}
+\input{cv/honors}
+\input{cv/extracurricular}
 
 %-------------------------------------------------------------------------------
 \end{document}
