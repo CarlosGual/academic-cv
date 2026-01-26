@@ -60,8 +60,7 @@
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
-\RequirePackage{fontawesome}
-\RequirePackage[default,opentype]{sourcesanspro}
+\RequirePackage{fontawesome5}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -141,26 +140,85 @@
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
 %\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
-% Set font for header (default is Roboto)
+
+% Montserrat variable font - using RawFeature for weight axis
+% Weight values: 100-900
+
 \newfontfamily\headerfont[
-  Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-Italic,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldItalic,
-]{Roboto}
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=500}},
+]{Montserrat}
 
 \newfontfamily\headerfontlight[
-  Path=\@fontdir,
-  UprightFont=*-Thin,
-  ItalicFont=*-ThinItalic,
-  BoldFont=*-Medium,
-  BoldItalicFont=*-MediumItalic,
-]{Roboto}
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=400}},
+]{Montserrat}
 
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+% Body fonts with different weights
+\newfontfamily\montserrat[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=500}},
+]{Montserrat}
+
+\newfontfamily\montserratlight[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=400}},
+]{Montserrat}
+
+\newfontfamily\montserratsemibold[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=600}},
+]{Montserrat}
+
+\newfontfamily\montserratmedium[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=500}},
+]{Montserrat}
+
+\newfontfamily\montserratbold[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=700}},
+]{Montserrat}
+
+\newcommand*{\footerfont}{\montserrat}
+\newcommand*{\bodyfont}{\montserrat}
+\newcommand*{\bodyfontlight}{\montserratlight}
+\newcommand*{\bodyfontsemibold}{\montserratsemibold}
+\newcommand*{\bodyfontmedium}{\montserratmedium}
+\newcommand*{\bodyfontbold}{\montserratbold}
+
+% Set Montserrat as the default document font
+\setmainfont[
+  Path=/Users/carlosgutierrez/Library/Fonts/,
+  Extension=.ttf,
+  UprightFont=Montserrat-VariableFont_wght,
+  ItalicFont=Montserrat-Italic-VariableFont_wght,
+  BoldFont=Montserrat-VariableFont_wght,
+  BoldItalicFont=Montserrat-Italic-VariableFont_wght,
+  RawFeature={axis={wght=500}},
+  BoldFeatures={RawFeature={axis={wght=700}}},
+]{Montserrat}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -168,7 +226,7 @@
 % Configure styles for each CV elements
 % For fundamental structures
 % here, you can modify colors, sizes, and fonts for each type of text
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfontlight\color{sectiontext} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\bodyfontmedium\color{sectiontext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{sectiontext} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{darktext} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{9pt}{1em}\headerfont\itshape\color{lighttext} #1}}
@@ -177,32 +235,32 @@
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{\textbf{{\fontsize{15pt}{1em}\bodyfont\color{sectiontext}\@sectioncolor #1}}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
-\newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\color{text}}
+\newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfont\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{darktext} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfontsemibold\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontmedium\scshape\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{darktext} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\upshape\color{text} #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontmedium\color{graytext} #1}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\subentrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\subentrylocationstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+\newcommand*{\subentrylocationstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\upshape\color{text} #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
-\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontsemibold\color{darktext} #1}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontmedium\color{text} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{graytext} #1}}
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{text} #1}}
-\newcommand*{\skilllocstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{text} #1}}
+\newcommand*{\skilllocstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
 
 % For elements of publication
 \newcommand*{\pubstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
@@ -315,7 +373,7 @@
 % Others
 % this defines the spacing between each section
 \newcommand{\acvSectionTopSkip}{3mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionContentTopSkip}{0.0mm}
 
 
 %-------------------------------------------------------------------------------
@@ -477,7 +535,7 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{2mm}
   \subsectionstyle{#1}
   \phantomsection
 }
@@ -485,7 +543,7 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{1mm}
   \paragraphstyle
 }{%
   \par
@@ -503,7 +561,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+%  \vspace{1.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -543,7 +601,7 @@
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2mm}
+  \vspace{1mm}
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
@@ -562,7 +620,7 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
+  \vspace{1mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
@@ -581,7 +639,7 @@
 % Define an environment for cvpub
 \newenvironment{cvpubs}{%
   \vspace{\acvSectionContentTopSkip}
-    \vspace{-2mm}
+    \vspace{1mm}
     \paragraphstyle
 }{%
     \par
@@ -598,7 +656,7 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  \vspace{-5.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
@@ -606,5 +664,5 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{0.5mm}
 }
