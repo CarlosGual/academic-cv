@@ -141,83 +141,47 @@
 % Set the FontAwesome font to be up-to-date.
 %\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 
-% Montserrat variable font - using RawFeature for weight axis
-% Weight values: 100-900
+% Montserrat static fonts from local directory
+\newcommand{\MontserratFontPath}{fonts/montserrat/}
 
 \newfontfamily\headerfont[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=500}},
+  Path=\MontserratFontPath,
+  UprightFont=Montserrat-Regular.ttf,
+  ItalicFont=Montserrat-Italic.ttf,
+  BoldFont=Montserrat-Bold.ttf,
+  BoldItalicFont=Montserrat-BoldItalic.ttf,
 ]{Montserrat}
 
 \newfontfamily\headerfontlight[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=400}},
+  Path=\MontserratFontPath,
+  UprightFont=Montserrat-Regular.ttf,
+  ItalicFont=Montserrat-Italic.ttf,
+  BoldFont=Montserrat-Bold.ttf,
+  BoldItalicFont=Montserrat-BoldItalic.ttf,
 ]{Montserrat}
 
-% Body fonts with different weights
 \newfontfamily\montserrat[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=500}},
-]{Montserrat}
-
-\newfontfamily\montserratlight[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=400}},
-]{Montserrat}
-
-\newfontfamily\montserratsemibold[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=600}},
-]{Montserrat}
-
-\newfontfamily\montserratmedium[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=500}},
-]{Montserrat}
-
-\newfontfamily\montserratbold[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=700}},
+  Path=\MontserratFontPath,
+  UprightFont=Montserrat-Regular.ttf,
+  ItalicFont=Montserrat-Italic.ttf,
+  BoldFont=Montserrat-Bold.ttf,
+  BoldItalicFont=Montserrat-BoldItalic.ttf,
 ]{Montserrat}
 
 \newcommand*{\footerfont}{\montserrat}
 \newcommand*{\bodyfont}{\montserrat}
-\newcommand*{\bodyfontlight}{\montserratlight}
-\newcommand*{\bodyfontsemibold}{\montserratsemibold}
-\newcommand*{\bodyfontmedium}{\montserratmedium}
-\newcommand*{\bodyfontbold}{\montserratbold}
+\newcommand*{\bodyfontlight}{\montserrat}
+\newcommand*{\bodyfontsemibold}{\montserrat}
+\newcommand*{\bodyfontmedium}{\montserrat}
+\newcommand*{\bodyfontbold}{\montserrat}
 
 % Set Montserrat as the default document font
 \setmainfont[
-  Path=/Users/carlosgutierrez/Library/Fonts/,
-  Extension=.ttf,
-  UprightFont=Montserrat-VariableFont_wght,
-  ItalicFont=Montserrat-Italic-VariableFont_wght,
-  BoldFont=Montserrat-VariableFont_wght,
-  BoldItalicFont=Montserrat-Italic-VariableFont_wght,
-  RawFeature={axis={wght=500}},
-  BoldFeatures={RawFeature={axis={wght=700}}},
+  Path=\MontserratFontPath,
+  UprightFont=Montserrat-Regular.ttf,
+  ItalicFont=Montserrat-Italic.ttf,
+  BoldFont=Montserrat-Bold.ttf,
+  BoldItalicFont=Montserrat-BoldItalic.ttf,
 ]{Montserrat}
 
 %-------------------------------------------------------------------------------
@@ -238,14 +202,14 @@
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfont\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfontsemibold\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontmedium\scshape\color{graytext} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{darktext} \textbf{#1}}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{darktext} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\upshape\color{text} #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontmedium\color{graytext} #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} \textbf{#1}}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\subentrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\slshape\color{graytext} #1}}
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\slshape\color{graytext} #1}}
@@ -253,13 +217,13 @@
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontsemibold\color{darktext} #1}}
-\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontmedium\color{text} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{darktext} \textbf{#1}}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{graytext} #1}}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} \textbf{#1}}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} \textbf{#1}}}
 \newcommand*{\skilllocstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
 
 % For elements of publication
